@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { NavigationBar } from './features/navigation/NavigationBar';
 import { Home } from './pages/Home';
 import { loadingAnimation } from './loading/loadingAnimation';
 
@@ -25,6 +26,7 @@ function App() {
       </div>
       <div className='app'>
         <BrowserRouter>
+          <NavigationBar />
           <Routes>
             <Route path='/' element={<Home />} />
           </Routes>

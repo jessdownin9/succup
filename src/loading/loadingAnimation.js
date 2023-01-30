@@ -6,6 +6,7 @@ export const loadingAnimation = (container) => {
   colors = ['#836ee5','#fe94b4','#49d2f5','#ff5354','#00b1b4','#ffe465','#0071ff','#03274b'];
 
   let shapes = doc.querySelectorAll('shape');
+  let stopEarly = 0;
 
   shapes.forEach((shape, index) => {
     setInterval(() => {
@@ -29,7 +30,11 @@ export const loadingAnimation = (container) => {
       if(!cl.contains('bounce-up')) cl.add('bounce-up');
       cl.replace('bounce-down', 'bounce-up');
       setTimeout(() => cl.replace('bounce-up', 'bounce-down'), 400)
-    
+
+      stopEarly++;
+      if (stopEarly > 21) {
+        return;
+      }
     },740)
   })
 };
