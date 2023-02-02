@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
 
 .screen2 {
     background-image: url('../images/iphoneyellowandbluebackground.png');
@@ -92,12 +93,13 @@
 }
 
 .headline-container {
-    position: relative;
+    position: absolute;
     left: 65%;
-    bottom: 100%;
+    top: 115%;
     width: 400px;
     height: 400px;
-    z-index: 1;
+    z-index: 0;
+
 }
 
 .headline-container h1 {
@@ -107,4 +109,5 @@
     text-align: end;
     margin-bottom: 0;
     z-index: 0;
+    font-display: block;
 }

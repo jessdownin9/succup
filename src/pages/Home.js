@@ -4,7 +4,6 @@ import './Home2.css';
 import './Home3.css';
 import './Home4.css';
 import "@fontsource/pavanam";
-import "@fontsource/londrina-shadow";
 import { buttonFontAnimation } from '../animations/buttonFontAnimation';
 import { changeSize, findPicX, findPicY } from '../animations/bubbleZoomAnimation';
 import { scrollBack, scrollToNext } from '../animations/scrollingAnimation';

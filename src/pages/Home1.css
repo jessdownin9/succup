@@ -12,7 +12,6 @@
     left: 72%;
     top: 37%;
     width: 300px;
-    height: auto;
     animation: swing ease-in-out 1s infinite alternate;
     transform-origin: 0px 110px;
     z-index: 1;
