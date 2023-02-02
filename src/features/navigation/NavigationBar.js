@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavigationBar.css';
+import "@fontsource/pavanam";
 
 export function NavigationBar() {
     return (
         <div className="navigation-bar">
-            <Link to={'/'}>
+            <Link to={'/home'}>
                 <img className='logo' src={require('../../images/blacklogotransbackground.png')} alt='Suc Cup logo' />
             </Link>
             <input id="menu-toggle" type="checkbox" />

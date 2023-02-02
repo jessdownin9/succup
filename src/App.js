@@ -1,37 +1,21 @@
 import './App.css';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { NavigationBar } from './features/navigation/NavigationBar';
+import { NavBarLayout } from './pages/NavBarLayout';
+import { Loading } from './pages/Loading';
 import { Home } from './pages/Home';
-import { loadingAnimation } from './loading/loadingAnimation';
 
 function App() {
-  const loader = useRef(null);
-
-  useEffect(() => {
-    if (loader.current) {
-      loadingAnimation(loader.current);
-    }
-    setTimeout(() => {
-      loader.current.style.display = 'none';
-    }, 2950);
-  }, []);
-  
   return (
-    <div className='app-container'>
-      <div className='loader' ref={loader}>
-        <shape></shape>
-        <shape></shape>
-        <shape></shape>
-      </div>
-      <div className='app'>
-        <BrowserRouter>
-          <NavigationBar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
+    <div className='app'>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={<Loading />} />
+          <Route exact path='/home' element={<NavBarLayout />}>
+            <Route index element={<Home />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,42 @@
+.screen3 {
+    background-color: white;
+    height: 100vh;
+    width: auto;
+}
+
+.screen3 h1 {
+    font-family: 'Londrina Solid';
+    font-size: 15vh;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    top: 70px;
+    left: center;
+    text-align: center;
+}
+
+.screen3 .image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 125px;
+}
+
+.first-row, .second-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.screen3 img {
+    width: 225px;
+    height: 225px;
+    border-radius: 100%;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px;
+    /* transform: translate(-50%, -50%); */
+    /* position: relative; */
+    margin-left: 5px;
+    margin-right: 5px;
+    /* top: 50%; */
+}

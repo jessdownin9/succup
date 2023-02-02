@@ -1,0 +1,90 @@
+.screen1 {
+    background-image: url('../images/iphonescollage.png');
+    background-size: cover;
+    background-position: 50%;
+    background-color: #aecbcf;
+    height: 100vh;
+    width: auto;
+}
+
+.green-cup {
+    position: relative;
+    /* opacity: 0; */
+    left: 72%;
+    top: 37%;
+    width: 300px;
+    height: auto;
+    /* animation: greenBounce 0.5s cubic-bezier(.5, -1, .75, 4) forwards;
+    transform: translate(-50%, -50%) rotate(15deg);
+    animation-delay: 0.5s; */
+    animation: swing ease-in-out 1s infinite alternate;
+    transform-origin: 0px 110px;
+    /* float:left; */
+    /* box-shadow: 5px 5px 10px rgba(0,0,0,0.5); */
+    z-index: 1;
+}
+
+/* .green-cup:after {
+    content: '';
+    position: absolute;  
+    width: 20px; height: 20px;  
+    border: 1px solid #999;
+    top: -10px; left: 50%;
+    z-index: 0;
+    border-bottom: none;
+    border-right: none;
+    transform: rotate(45deg);
+} */
+
+/* .green-cup:before {
+    content: '';
+    position: absolute;
+    width: 5px; height: 5px;
+    top: -14px;left: 54%;
+    z-index: 5;
+    border-radius: 50% 50%;
+    background: #000;
+} */
+
+@keyframes swing {
+    0% { transform: rotate(85deg); }
+    100% { transform: rotate(88deg); }
+}
+
+.main-logo {
+    position: absolute;
+    /* opacity: 0; */
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    /* /* animation: logoBounce 0.5s cubic-bezier(.5, -1, .75, 4) forwards; */
+    transform: translate(-50%, -50%);
+    /* animation-delay: 1.5s; */
+    z-index: 0;
+}
+
+/* @keyframes greenBounce {
+    0% {
+        height: 0px;
+        width: 0px;
+        opacity: 0;
+    }
+    100% {
+        height: auto;
+        width: 300px;
+        opacity: 1;
+    }
+}
+
+@keyframes logoBounce {
+    0% {
+        height: 0px;
+        width: 0px;
+        opacity: 0;
+    }
+    100% {
+        height: auto;
+        width: 500px;
+        opacity: 1;
+    }
+} */

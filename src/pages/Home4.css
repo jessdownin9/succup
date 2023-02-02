@@ -1,0 +1,41 @@
+.screen4 {
+    height: 150vh;
+    width: auto;
+    background-image: url('../images/keychain.png');
+    background-size: cover;
+}
+
+.screen4 .keychain-headline-container {
+    width: 75vh;
+    position: relative;
+    z-index: 1;
+    left: 5%;
+    top: 40%;
+}
+
+.screen4 h1 {
+    font-family: 'Londrina Shadow';
+    font-size: 11vh;
+    color: #372A28;
+}
+
+.screen4 .footer-container {
+    display: flex;
+    position: relative;
+    top: 108vh;
+    justify-content: space-between;
+}
+
+.screen4 h2 {
+    font-family: 'Pavanam';
+    color: #372A28;
+    font-size: 14px;
+}
+
+.screen4 .left {
+    margin-left: 15px;
+}
+
+.screen4 .center {
+    margin-right: 35%;
+}

@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    z-index: 2;
 }
 
 .navigation-bar {
@@ -23,7 +24,7 @@
     list-style-type: none;
     margin: 15px;
     padding: 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     margin-top: 70px;
     right: 0;
@@ -42,6 +43,7 @@
     width: 100%;
     color: #372A28;
     background-color: rgba(255,244,234, 0.9);
+    font-family: 'Pavanam';
 }
 
 .menu > li:not(:last-child) {
