@@ -14,7 +14,7 @@ export const Loading = () => {
           loader.current.style.display = 'none';
           navigate('/home');
         }, 2950);
-      }, []);
+      }, [navigate]);
 
     return (
         <div className='loader' ref={loader}>

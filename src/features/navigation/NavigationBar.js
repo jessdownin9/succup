@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './NavigationBar.css';
 import "@fontsource/pavanam";
+import { scrollToTop } from '../../animations/scrollingAnimation';
 
 export function NavigationBar() {
     return (
         <div className="navigation-bar">
-            <Link to={'/home'}>
-                <img className='logo' src={require('../../images/blacklogotransbackground.png')} alt='Suc Cup logo' />
-            </Link>
+            <img className='logo' src={require('../../images/blacklogotransbackground.png')} alt='Suc Cup logo' onClick={scrollToTop} />
             <input id="menu-toggle" type="checkbox" />
             <label className='menu-button-container' htmlFor="menu-toggle">
                 <div className='menu-button'></div>

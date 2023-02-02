@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { useHover } from 'usehooks-ts';
 import './Home1.css';
 import './Home2.css';
 import './Home3.css';
@@ -8,31 +7,39 @@ import "@fontsource/pavanam";
 import "@fontsource/londrina-shadow";
 import { buttonFontAnimation } from '../animations/buttonFontAnimation';
 import { changeSize, findPicX, findPicY } from '../animations/bubbleZoomAnimation';
+import { scrollBack, scrollToNext } from '../animations/scrollingAnimation';
 
 export const Home = () => {
     const buttonRef = useRef(null);
-    const containerRef = useRef(null);
+    const imgContainerRef = useRef(null);
     const carRef = useRef(null);
     const kitchenRef = useRef(null);
     const showerRef = useRef(null);
     const bathroomRef = useRef(null);
-    const deskRef = useRef(null);
-    const isHovered = useHover(buttonRef);
+    const deskRef = useRef(null);    
 
     useEffect(() => {
-        const intervalId = buttonFontAnimation(buttonRef.current, ['Londrina Solid', 'Londrina Shadow']);
-        if (isHovered) {
-            clearInterval(intervalId);
-            buttonRef.current.style.fontFamily = 'Londrina Solid';
-        }
-        containerRef.current.addEventListener('mousemove', (e) => {            
+        // Scrolling animation
+        document.addEventListener('wheel', (e) => {
+            if (e.deltaY > 0) {
+                scrollToNext();
+            } else if (e.deltaY < 0) {
+                scrollBack();
+            }
+        })
+
+        // 'I'm Interested!' button blinking animation
+        buttonFontAnimation(buttonRef.current, ['Londrina Solid', 'Londrina Shadow']);
+
+        // Picture bubble grow/shrink animation
+        imgContainerRef.current.addEventListener('mousemove', (e) => {            
             changeSize(carRef.current, findPicX(carRef.current), findPicY(carRef.current), e);
             changeSize(kitchenRef.current, findPicX(kitchenRef.current), findPicY(kitchenRef.current), e);
             changeSize(showerRef.current, findPicX(showerRef.current), findPicY(showerRef.current), e);
             changeSize(bathroomRef.current, findPicX(bathroomRef.current), findPicY(bathroomRef.current), e);
             changeSize(deskRef.current, findPicX(deskRef.current), findPicY(deskRef.current), e);
         }, false);
-    }, [isHovered]);
+    }, []);
 
     return (
         <div className="home">
@@ -40,6 +47,7 @@ export const Home = () => {
                 <img className='green-cup' alt='Green Suc Cup' src={require('../images/greencup.png')} />
                 <img className='main-logo' alt='Suc Cup logo' src={require('../images/logosemitransparentbackground.png')} />
             </section>
+
             <section className='screen2'>
                 <div className='paragraph-container'>
                     <p>The Suc Cup is your modern all-in-one phone accessory. Utilizing durable yet flexible silicone, the Suc Cup allows you to mount your phone to any non-porous surface for your watching, filming, picture taking, or any other phone use desire. The Suc Cup can be stuck to your phone and then to the other surface you wish to mount it to with a simple push. And with tabs on each cup, you can remove the Suc Cup with ease. The included key ring allows you to store the Suc Cup on your key chain as a functional and stylish key chain ornament.</p>
@@ -50,9 +58,10 @@ export const Home = () => {
                     <h1>THE ONLY PHONE ACCESSORY YOU NEED</h1>
                 </div>
             </section>
+
             <section className='screen3'>
                 <h1>HOW WE SUC</h1>
-                <div className='image-container' ref={containerRef}>
+                <div className='image-container' ref={imgContainerRef}>
                     <div className='first-row'>
                         <img className='bathroom' alt='Phone mounted on bathroom mirror' src={require('../images/phoneinbathroom.png')} ref={bathroomRef} />
                         <img className='kitchen' alt='Phone mounted above kitchen stove' src={require('../images/phoneinkitchen.jpg')} ref={kitchenRef} />
@@ -62,6 +71,7 @@ export const Home = () => {
                     </div>
                 </div>
             </section>
+
             <section className='screen4'>
                 <div className='keychain-headline-container'>
                     <h1>EASY STORAGE ON YOUR KEYCHAIN</h1>
