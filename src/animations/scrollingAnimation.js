@@ -18,9 +18,9 @@ export const scrollToNext = () => {
 export const scrollBack = () => {
     let viewportHeight = window.innerHeight;
     if (window.scrollY > viewportHeight * 3) {
-        animateScroll.scrollTo(viewportHeight * 2);
+        animateScroll.scrollTo(viewportHeight * 3);
     } else if (window.scrollY > viewportHeight * 2) {
-        animateScroll.scrollTo(viewportHeight);
+        animateScroll.scrollTo(viewportHeight * 2);
     } else if (window.scrollY > viewportHeight) {
         animateScroll.scrollTo(viewportHeight);
     } else {
