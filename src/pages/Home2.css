@@ -133,15 +133,14 @@
         font-size: 1.4em;
     }
     .interested-button {
-        position: absolute;
-        top: 169%;
+        top: 178%;
         left: 55%;
         height: 5%;
         width: 30%;
         font-size: 4vw;
     }
     .purple-cup {
-        top: 100%;
+        top: 110%;
         left: 25%;
         width: 25%;
     }
@@ -154,6 +153,7 @@
     .headline-container h1 {
         font-size: 3.4em;
         text-align: start;
+        margin-top: 15px;
     }
 }
 
@@ -162,8 +162,11 @@
     .paragraph-container p {
         font-size: 0.85em;
     }
+    .interested-button {
+        top: 181%;
+    }
     .purple-cup {
-        top: 100%;
+        top: 115%;
         left: 35%;
         width: 35%;
     }
