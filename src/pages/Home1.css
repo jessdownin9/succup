@@ -5,13 +5,22 @@
     background-color: #aecbcf;
     height: 100vh;
     width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-logo {
+    width: 50%;
+    height: auto;
+    z-index: 1;
 }
 
 .green-cup {
-    position: relative;
-    left: 72%;
-    top: 37%;
-    width: 300px;
+    position: absolute;
+    left: 75%;
+    top: 44%;
+    width: 20%;
     animation: swing ease-in-out 1s infinite alternate;
     transform-origin: 0px 110px;
     z-index: 1;
@@ -22,11 +31,16 @@
     100% { transform: rotate(88deg); }
 }
 
-.main-logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 500px;
-    transform: translate(-50%, -50%);
-    z-index: 0;
+/* Laptops & Desktops */
+@media screen and (max-width: 1240px), screen and (max-height: 515px) {
+    .green-cup {
+        display: none;
+    }
+}
+
+/* Mobile Devices & Tablets */
+@media screen and (orientation: portrait) {
+    .banner-logo {
+        width: 75%;
+    }
 }

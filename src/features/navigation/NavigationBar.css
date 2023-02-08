@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 999999;
 }
 
 .navigation-bar {
