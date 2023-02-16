@@ -39,7 +39,6 @@
     --items: 5;
     --middle: 3;
     --position: 3;
-    pointer-events: none;
 }
 
 .carousel-images .item {

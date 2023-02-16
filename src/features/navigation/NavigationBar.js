@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import './NavigationBar.css';
 import "@fontsource/pavanam";
 import { scrollToTop } from '../../animations/scrollingAnimation';
@@ -13,7 +12,7 @@ export function NavigationBar() {
                 <div className='menu-button'></div>
             </label>
             <ul className="menu">
-                <li>LOGIN</li>
+                <li>HOME</li>
                 <li>SHOP</li>
                 <li>CONTACT</li>
                 <li>ABOUT US</li>
