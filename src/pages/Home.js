@@ -10,13 +10,15 @@ import { useSwipeable } from 'react-swipeable';
 
 export const Home = () => {
     const buttonRef = useRef(null);
-    let [position, setPosition] = useState(3);
+    const [position, setPosition] = useState(3);
     const handlers = useSwipeable({
         onSwipedLeft: () => {
-            setPosition(position++);
+            console.log('swiped left');
+            setPosition(position + 1);
         },
         onSwipedRight: () => {
-            setPosition(position--);
+            console.log('swiped right');
+            setPosition(position - 1);
         }
     })
     
