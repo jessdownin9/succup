@@ -1,15 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './Home1.css';
-import './Home2.css';
-import './Home3.css';
-import './Home4.css';
+import './HomeCSS/Home1.css';
+import './HomeCSS/Home2.css';
+import './HomeCSS/Home3.css';
+import './HomeCSS/Home4.css';
 import "@fontsource/pavanam";
 import { buttonFontAnimation } from '../animations/buttonFontAnimation';
+import { useSwipeable } from 'react-swipeable';
 // import { scrollBack, scrollToNext } from '../animations/scrollingAnimation';
 
 export const Home = () => {
     const buttonRef = useRef(null);
-    const [position, setPosition] = useState(3);
+    let [position, setPosition] = useState(3);
+    const handlers = useSwipeable({
+        onSwipedLeft: () => {
+            setPosition(position++);
+        },
+        onSwipedRight: () => {
+            setPosition(position--);
+        }
+    })
     
     useEffect(() => {
         // document.addEventListener('wheel', (e) => {
@@ -50,7 +59,7 @@ export const Home = () => {
                     <input type="radio" name="position" onChange={() => setPosition(3)} checked={position === 3} />
                     <input type="radio" name="position" onChange={() => setPosition(4)} checked={position === 4} />
                     <input type="radio" name="position" onChange={() => setPosition(5)} checked={position === 5} />
-                    <div className='carousel-images' style={{'--position': position}} >
+                    <div className='carousel-images' style={{'--position': position}} {...handlers} >
                         <img className='item bathroom' alt='Phone mounted on bathroom mirror' src={require('../images/phoneinbathroom.png')} onClick={() => setPosition(1)} />
                         <img className='item kitchen' alt='Phone mounted above kitchen stove' src={require('../images/phoneinkitchen.jpg')} onClick={() => setPosition(2)} />
                         <img className='item car' alt='Phone mounted on interior of car' src={require('../images/phoneincar.jpg')} onClick={() => setPosition(3)} />

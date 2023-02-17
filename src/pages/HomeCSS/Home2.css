@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap');
 
 .screen2 {
-    background-image: url('../images/iphoneyellowandbluebackground.png');
+    background-image: url('../../images/iphoneyellowandbluebackground.png');
     background-size: cover;
     background-color: #fed676;
     background-position: center;

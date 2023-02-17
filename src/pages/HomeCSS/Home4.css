@@ -1,7 +1,7 @@
 .screen4 {
     height: 150vh;
     width: auto;
-    background-image: url('../images/keychain.png');
+    background-image: url('../../images/keychain.png');
     background-size: cover;
     display: flex;
     flex-direction: column;

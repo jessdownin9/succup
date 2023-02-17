@@ -17,6 +17,7 @@
 
 .navigation-bar .logo {
     height: 60px;
+    cursor: pointer;
 }
 
 .menu {
@@ -44,6 +45,7 @@
     color: #372A28;
     background-color: rgba(255,244,234, 0.9);
     font-family: 'Pavanam';
+    cursor: pointer;
 }
 
 .menu > li:not(:last-child) {
