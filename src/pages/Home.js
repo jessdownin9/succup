@@ -82,7 +82,9 @@ export const Home = () => {
                     <div className='center'>
                         <h2>Privacy Policy | Terms of Use | Sales and Refunds | Legal</h2>
                     </div>
-                    <div className='right'></div>
+                    <div className='right'>
+                        <h2>succup22@gmail.com</h2>
+                    </div>
                 </div>
             </section>
         </div>

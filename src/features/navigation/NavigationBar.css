@@ -52,6 +52,16 @@
     border-bottom: 1px solid rgba(255,244,234, 0.9);
 }
 
+.menu li:hover {
+    font-weight: bold;
+    background-color: rgba(255,244,234, 1);
+}
+
+.menu li:active {
+    font-weight: bold;
+    background-color: rgb(214, 205, 197);
+}
+
 .menu-button-container {
     display: flex;
     height: 100%;

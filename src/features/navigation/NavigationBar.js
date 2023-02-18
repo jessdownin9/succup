@@ -26,7 +26,7 @@ export function NavigationBar() {
             <ul className="menu">
                 <li onClick={handleMenuHomeClick}>HOME</li>
                 <li>SHOP</li>
-                <li>CONTACT</li>
+                <li onClick={() => navigate('/contact')}>CONTACT</li>
                 <li>ABOUT US</li>
             </ul>
         </div>

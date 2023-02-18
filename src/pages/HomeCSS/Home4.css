@@ -26,6 +26,7 @@
     width: 100%;
     justify-content: center;
     padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .screen4 h2 {
@@ -42,6 +43,10 @@
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+.screen4 .right {
+    text-align: end;
 }
 
 /* Mobile Devices and Tablets */

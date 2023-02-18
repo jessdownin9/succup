@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
+
+.contact-container {
+  background: url("../images/contactbackground.png") center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-size: 1em;
+  font-family: "Pavanam";
+  color: #2A293E;
+  z-index: 0;
+  position: relative;
+  padding: 70px 0;
+}
+
+.contact-container .contact-us {
+  background: rgba(255,244,234, 0.9);
+  padding: 1em 2em;
+  border-top: 0.75em solid #AECBCF;
+  width: 75vw;
+  max-width: 30em;
+}
+
+.contact-container label, .contact-container input, .contact-container textarea {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-family: "Pavanam";
+}
+
+.contact-container input {
+  margin-bottom: 1em;
+}
+
+.contact-container h3 {
+  font-weight: normal;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  font-style: italic;
+  margin: 0;
+}
+
+.contact-container em {
+  color: #AECBCF;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.contact-container input, .contact-container textarea {
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background: rgba(255,244,234, 0.9);
+  padding-left: 5px;
+  outline: none;
+}
+
+.contact-container input:focus, .contact-container textarea:focus {
+  border: 1px solid #FED87C;
+}
+
+.contact-container textarea {
+  resize: none;
+}
+
+.contact-container button {
+  display: block;
+  float: right;
+  line-height: 24pt;
+  padding: 0 20px;
+  border: none;
+  background: #AECBCF;
+  color: white;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+}
+.contact-container button:hover {
+  background: inherit;
+  color: #AECBCF;
+  border-bottom: 2px solid #AECBCF;
+}
+
+.contact-container button::selection {
+  background: #FED87C;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: 1px solid #FED87C;
+  -webkit-text-fill-color: #2A293E;
+  -webkit-box-shadow: 0 0 0px 1000px #f8f4e5 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
