@@ -3,7 +3,9 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const { prototype } = require('nodemailer/lib/xoauth2');
 const app = express();
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -50,4 +52,4 @@ const contactEmail = nodemailer.createTransport({
     });
   });
 
-app.listen(5000, () => console.log("Server Running"));
+app.listen(port, () => console.log("Server Running"));
