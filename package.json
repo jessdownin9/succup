@@ -2,6 +2,7 @@
   "name": "suc-cup",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@fontsource/londrina-shadow": "^4.5.9",
     "@fontsource/pavanam": "^4.5.10",
