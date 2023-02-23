@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "@fontsource/pavanam";
 import './Contact.css';
+import { config } from '../api/config';
 
 export const Contact = () => {
     const [status, setStatus] = useState('SUBMIT');
@@ -16,7 +17,7 @@ export const Contact = () => {
             orderNumber: orderNumber.value,
             customerNote: customerNote.value
         };
-        let response = await fetch("/contact", {
+        let response = await fetch(`${config.url}/contact`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8"
