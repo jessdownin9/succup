@@ -1,12 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { NavigationBar } from '../features/navigation/NavigationBar';
+import { NavigationBar } from '../components/NavigationBar/NavigationBar';
+import { useShoppingCart } from '../context/ShoppingCarContext';
 
 export const NavBarLayout = () => {
+    const { isOpen } = useShoppingCart();
     return (
         <div>
             <NavigationBar />
             <div>
+                <div className={isOpen ? 'main-fade' : 'main'}></div>
                 <Outlet />
             </div>
         </div>

@@ -20,6 +20,38 @@
     cursor: pointer;
 }
 
+.shopping-cart-icon {
+    width: 40px;
+    margin-left: auto;
+    margin-right: 15px;
+    position: relative;
+}
+
+.hidden-shopping-cart-icon {
+    display: none;
+}
+
+.hidden-cart-count {
+    display: none;
+}
+
+.cart-count {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    border-radius: 100%;
+    align-items: center;
+    width: 17px;
+    height: 17px;
+    font-size: 0.5em;
+    color: white;
+    font-weight: 800;
+    position: absolute;
+    bottom: 5px;
+    right: 50px;
+    font-size: 7.5px;
+}
+
 .menu {
     display: flex;
     list-style-type: none;

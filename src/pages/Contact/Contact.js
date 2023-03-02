@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "@fontsource/pavanam";
 import './Contact.css';
-import { config } from '../api/config';
+import { config } from '../../api/config';
 
 export const Contact = () => {
     const [status, setStatus] = useState('SUBMIT');

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Spartan&display=swap");
 
 .contact-container {
-  background: url("../images/contactbackground.png") center center no-repeat;
+  background: url("../../images/contactbackground.png") center center no-repeat;
   background-size: cover;
   width: 100vw;
   height: 100vh;

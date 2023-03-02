@@ -1,0 +1,44 @@
+.offcanvas-hide {
+    width: 0;
+    height: 0;
+}
+
+.offcanvas-hide * {
+    display: none;
+}
+
+.offcanvas-show {
+  height: 100%;
+  width: 40%;
+  position: fixed;
+  z-index: 2;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  padding: 20px;
+  transition: 0.5s;
+}
+
+.offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.offcanvas-footer {
+    text-align: end;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.main-fade {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    border: 1px solid black;
+}
