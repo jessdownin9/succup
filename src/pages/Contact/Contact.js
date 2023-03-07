@@ -25,8 +25,8 @@ export const Contact = () => {
             body: JSON.stringify(details)
         });
         setStatus('SUBMIT');
-        let result = await response.json();
-        alert(result.status);
+        let jsonResponse = await response.json();
+        alert(jsonResponse.status);
     }
     return (
         <div className='contact-container'>

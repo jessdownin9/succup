@@ -1,9 +1,9 @@
 import React from 'react';
-import { useShoppingCart } from '../../context/ShoppingCarContext';
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatPrice } from '../../utilities/formatPrice';
 import './StoreItem.css';
 
-export const StoreItem = ({item}) => {
+export const StoreItem = ({ item }) => {
     const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useShoppingCart();
     const quantity = getItemQuantity(item.id);
     return (

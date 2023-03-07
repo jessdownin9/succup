@@ -1,12 +1,11 @@
 import React from 'react';
-import { useShoppingCart } from '../../context/ShoppingCarContext';
-import storeItems from '../../data/items.json';
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 import './CartItem.css';
 import { formatPrice } from '../../utilities/formatPrice';
 
-export const CartItem = ({ id, quantity }) => {
+export const CartItem = ({ quantity, item }) => {
     const { removeFromCart } = useShoppingCart();
-    const item = storeItems.find(item => item.id === id);
+
     if (!item) return null;
     return (
        <div className='cart-item-container'>

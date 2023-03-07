@@ -3,7 +3,7 @@ import './NavigationBar.css';
 import "@fontsource/pavanam";
 import { scrollToTop } from '../../animations/scrollingAnimation';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useShoppingCart } from '../../context/ShoppingCarContext';
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 
 export function NavigationBar() {
     const navigate = useNavigate();
@@ -24,7 +24,7 @@ export function NavigationBar() {
             <img className='logo' src={require('../../images/blacklogotransbackground.png')} alt='Suc Cup logo' onClick={handleMenuHomeClick} />
             <img className={cartQuantity > 0 ? 'shopping-cart-icon' : 'hidden-shopping-cart-icon'} src={require('../../images/shoppingcarticon.png')} alt='Shopping cart icon' onClick={isOpen ? closeCart : openCart} />
             <div className={cartQuantity > 0 ? 'cart-count' : 'hidden-cart-count'}>{cartQuantity > 99 ? '99+' : cartQuantity}</div>
-            <input id="menu-toggle" type="checkbox" onClick={() => setCheck(!checked)} checked={checked} />
+            <input id="menu-toggle" type="checkbox" onChange={() => setCheck(!checked)} checked={checked} />
             <label className='menu-button-container' htmlFor="menu-toggle">
                 <div className='menu-button'></div>
             </label>
