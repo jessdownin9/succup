@@ -32,10 +32,11 @@ export const ShoppingCart = ({ isOpen }) => {
                 })}
             </div>
             <div className='offcanvas-footer'>
-                Total {hasLoaded && formatPrice(cartItems.reduce((total, cartItem) => {
+                <h4>Total {hasLoaded && formatPrice(cartItems.reduce((total, cartItem) => {
                     const item = storeItems.find(storeItem => cartItem.id === storeItem.id);
                     return total + (item?.price || 0) * cartItem.quantity;
-                }, 0))}
+                }, 0))}</h4>
+                <button>Proceed to Checkout</button>
             </div>
         </div>
     )

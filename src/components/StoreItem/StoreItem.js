@@ -19,11 +19,11 @@ export const StoreItem = ({ item }) => {
                 <button className='add-to-cart-button' onClick={() => increaseCartQuantity(item.id)}>+ Add To Cart</button>
                 <div className='change-cart-quantity-flex-container'>
                     <div className='change-cart-quantity-row-1'>
-                        <button className='change-quantity-button' onClick={() => decreaseCartQuantity(item.id)}>-</button>
+                        <button id='change-quantity-button' onClick={() => decreaseCartQuantity(item.id)}>–</button>
                         <h3>{quantity}</h3>
-                        <button className='change-quantity-button' onClick={() => increaseCartQuantity(item.id)}>+</button>
+                        <button id='change-quantity-button' onClick={() => increaseCartQuantity(item.id)}>+</button>
                     </div>
-                    <button className='remove-button' onClick={() => removeFromCart(item.id)}>Remove</button>
+                    <button id='remove-button' onClick={() => removeFromCart(item.id)}>Remove</button>
                 </div>
             </div>
        </div>

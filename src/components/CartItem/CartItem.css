@@ -17,12 +17,13 @@
 }
 
 .cart-item-name-price h1 {
-    font-size: 16px;
+    font-size: 1.25rem;
+    margin: 0px;
 }
 
 .cart-item-container .text-muted {
     color: gray;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 .cart-item-container .text-muted-none {
@@ -30,12 +31,13 @@
 }
 
 .cart-item-name-price h2 {
-    font-size: 14px;
+    font-size: 0.8rem;
     color: gray;
 }
 
 .cart-item-info-container h3 {
-    font-size: 14px;
+    font-size: 1rem;
+    margin: 5px;
 }
 
 .cart-item-total-remove {

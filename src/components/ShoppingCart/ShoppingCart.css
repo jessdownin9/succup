@@ -8,16 +8,19 @@
 }
 
 .offcanvas-show {
-  height: 100%;
-  width: 40%;
-  position: fixed;
-  z-index: 2;
-  top: 60px;
-  right: 0;
-  background-color: white;
-  overflow-x: hidden;
-  padding: 20px;
-  transition: 0.5s;
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    z-index: 2;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 80px;
+    transition: 0.5s;
+    font-family: 'Pavanam';
 }
 
 .offcanvas-header {
@@ -26,10 +29,21 @@
     justify-content: space-between;
 }
 
+.offcanvas-header h1 {
+    margin: 20px;
+    font-size: 2.5rem;
+}
+
 .offcanvas-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.offcanvas-footer h4 {
     text-align: end;
-    font-size: 18px;
+    font-size: 2rem;
     font-weight: bold;
+    margin: 10px;
 }
 
 .main-fade {
@@ -41,4 +55,70 @@
     height: 100vh;
     z-index: 2;
     border: 1px solid black;
+}
+
+.offcanvas-show button {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    font-family: 'Pavanam';
+    font-size: 20px;
+    line-height: 1;
+    margin: 0;
+    height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.offcanvas-show button:hover, .offcanvas-show button:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.offcanvas-show button:hover {
+    transform: translateY(-1px);
+}
+
+.offcanvas-show button:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}
+
+.offcanvas-show .offcanvas-header button {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    padding: 0px;
+}
+
+.offcanvas-show .offcanvas-body button {
+    padding: 0px 10px;
+    height: 1.5rem;
+    font-size: 0.75rem;
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .offcanvas-show {
+        width: 75%;
+      }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .offcanvas-show {
+        width: 100%;
+      }
 }
