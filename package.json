@@ -34,6 +34,7 @@
     "frontend": "react-scripts start",
     "backend": "node src/api/server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\"",
+    "build": "react-scripts build",
     "heroku-postbuild": "npm install && npm run build"
   },
   "eslintConfig": {
