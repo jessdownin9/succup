@@ -8,6 +8,7 @@ app.use(express.json());
 const port = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV === 'production') app.use(express.static(path.join(__dirname, 'build')));
+console.log(path.join(__dirname, 'build'));
 
 const contactRouter = require('./contactRouter');
 app.use("/contact", contactRouter);
