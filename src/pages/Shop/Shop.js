@@ -11,6 +11,7 @@ export const Shop = () => {
     
     useEffect(() => {
         dispatch(fetchItems());
+        console.log('Shop:', storeItems);
     }, [dispatch]);
 
     return (

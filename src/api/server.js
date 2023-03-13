@@ -20,4 +20,6 @@ app.use("/contact", contactRouter);
 const productsRouter = require('./productsRouter');
 app.use("/products", productsRouter);
 
+console.log('server:');
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
