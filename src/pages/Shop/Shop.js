@@ -17,7 +17,7 @@ export const Shop = () => {
     return (
        <div className='shop-container'>
             {hasLoaded && storeItems.map((item, index) => {
-                return <StoreItem item={item} key={index} />;
+                return <p key={index}>{item.name}</p>;
             })}
        </div>
     )
