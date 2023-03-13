@@ -9,7 +9,7 @@ export const StoreItem = ({ item }) => {
     return (
        <div className='item-card-container'>
             <div className='card-img-container'>
-                <img className='card-img' src={require(`../../images/${item.imgUrl}.png`)} alt={item.imgUrl} />
+                <img className='card-img' src={require(`../../images/${item.imgurl}.png`)} alt={item.imgurl} />
             </div>
             <div className='name-and-price-container'>
                 <h1 className='item-name'>{item.name}</h1>
