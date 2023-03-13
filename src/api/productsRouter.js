@@ -5,8 +5,7 @@ const db = require('../db/index');
 productsRouter.get('/', (req, res) => {
     db.query('SELECT * FROM products', (err, result) => {
         if (err) console.log(err);
-        console.log('productsRouter:', result.rows);
-        res.send(result.rows);
+        res.send(result.values);
     })
 });
 

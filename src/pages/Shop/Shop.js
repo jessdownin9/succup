@@ -11,13 +11,12 @@ export const Shop = () => {
     
     useEffect(() => {
         dispatch(fetchItems());
-        console.log('Shop:', storeItems);
     }, [dispatch]);
 
     return (
        <div className='shop-container'>
             {hasLoaded && storeItems.map((item, index) => {
-                return <p key={index}>{item.name}</p>;
+                return <StoreItem item={item} key={index} />;
             })}
        </div>
     )
