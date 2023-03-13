@@ -4,7 +4,6 @@ export const fetchItems = createAsyncThunk('storeItems/fetchItems',
     async () => {
         let response = await fetch('/products');
         let jsonResponse = await response.json();
-        console.log('HERE', jsonResponse);
         return jsonResponse;
     }
 );
