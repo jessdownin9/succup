@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require("express");
 const paymentRouter = express.Router();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
+const cors = require("cors");
+paymentRouter.use(cors());
 
 paymentRouter.post('/', cors(), async (req, res) => {
     let { amount, id } = req.body;
