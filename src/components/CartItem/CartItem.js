@@ -9,7 +9,7 @@ export const CartItem = ({ quantity, item }) => {
     if (!item) return null;
     return (
        <div className='cart-item-container'>
-            <img className='cart-item-img' src={require(`../../images/${item.imgUrl}.png`)} alt={item.imgUrl} />
+            <img className='cart-item-img' src={require(`../../images/${item.imgurl}.png`)} alt={item.imgurl} />
             <div className='cart-item-info-container'>
                 <div className='cart-item-name-price'>
                     <h1>{item.name} <span className={quantity > 1 ? 'text-muted' : 'text-muted-none'}>x{quantity}</span></h1>

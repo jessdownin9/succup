@@ -14,11 +14,13 @@ export const Shop = () => {
     }, [dispatch]);
 
     return (
-       <div className='shop-container'>
-            {hasLoaded && storeItems.map((item, index) => {
-                return <StoreItem item={item} key={index} />;
-            })}
-       </div>
+        <div className='shop-page'>
+            <div className='shop-container'>
+                {hasLoaded && storeItems.map((item, index) => {
+                    return <StoreItem item={item} key={index} />;
+                })}
+            </div>
+        </div>
     )
 };
 

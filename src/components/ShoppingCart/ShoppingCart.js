@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
 import { formatPrice } from '../../utilities/formatPrice';
 import { CartItem } from '../CartItem/CartItem.js';
@@ -11,6 +12,7 @@ export const ShoppingCart = ({ isOpen }) => {
     const storeItems = useSelector(selectItems);
     const offcanvasRef = useRef(null);
     const hasLoaded = useSelector(selectLoaded);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleClickOutside = (e) => {
@@ -36,7 +38,15 @@ export const ShoppingCart = ({ isOpen }) => {
                     const item = storeItems.find(storeItem => cartItem.id === storeItem.id);
                     return total + (item?.price || 0) * cartItem.quantity;
                 }, 0))}</h4>
-                <button>Proceed to Checkout</button>
+                <button onClick={() => {
+                    if (cartItems.length) {
+                        navigate('/purchase');
+                        closeCart();
+                    } else {
+                        closeCart();
+                        alert('Your cart is empty!');
+                    }
+                }}>Proceed to Checkout</button>
             </div>
         </div>
     )

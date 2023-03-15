@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import "@fontsource/pavanam";
 import './Contact.css';
-import { config } from '../../api/config';
 
 export const Contact = () => {
     const [status, setStatus] = useState('SUBMIT');
@@ -17,7 +16,7 @@ export const Contact = () => {
             orderNumber: orderNumber.value,
             customerNote: customerNote.value
         };
-        let response = await fetch(`${config.url}/contact`, {
+        let response = await fetch('/contact', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json;charset=utf-8"
@@ -42,7 +41,7 @@ export const Contact = () => {
                     <input id="orderNumber" name="orderNumber" type="text" />
                     <label htmlFor="customerNote">YOUR MESSAGE <em>&#x2a;</em></label>
                     <textarea id="customerNote" name="customerNote" required="" rows="4"></textarea>
-                    <h3>Please provide all the information about your issue you can.</h3>
+                    <h3>Please provide all the information you can about your issue.</h3>
                     <button id="customerOrder">{status}</button>
                 </form>
             </div>
