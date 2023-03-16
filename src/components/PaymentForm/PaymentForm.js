@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import './PaymentForm.css';
 
-export const PaymentForm = () => {
+export const PaymentForm = ({ amount }) => {
     const [success, setSuccess] = useState(false);
     const stripe = useStripe();
     const elements = useElements();
@@ -42,11 +42,11 @@ export const PaymentForm = () => {
                        "Content-Type": "application/json;charset=utf-8"
                    },
                    body: JSON.stringify({
-                       amount: 1000,
+                       amount,
                        id
                    })
                });
-               if (response.data.success) {
+               if (response.status === 200) {
                    console.log('Successful payment');
                    setSuccess(true);
                }
@@ -70,7 +70,7 @@ export const PaymentForm = () => {
                 <button className='payment-button'>Submit Payment</button>
             </form> :
             <div>
-                <h2>Your payment was successful!</h2>
+                <h3 className='payment-success-message'>Your payment was successful!</h3>
             </div>
             }
         </div>

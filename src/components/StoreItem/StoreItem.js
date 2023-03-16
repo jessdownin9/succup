@@ -6,10 +6,12 @@ import './StoreItem.css';
 export const StoreItem = ({ item }) => {
     const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useShoppingCart();
     const quantity = getItemQuantity(item.id);
+    const imgurl = process.env.NODE_ENV === 'production' ? item.imgurl : item.imgUrl;
+
     return (
        <div className='item-card-container'>
             <div className='card-img-container'>
-                <img className='card-img' src={require(`../../images/${item.imgurl}.png`)} alt={item.imgurl} />
+                <img className='card-img' src={require(`../../images/${imgurl}.png`)} alt={imgurl} />
             </div>
             <div className='name-and-price-container'>
                 <h1 className='item-name'>{item.name}</h1>

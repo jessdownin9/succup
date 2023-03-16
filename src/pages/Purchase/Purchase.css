@@ -1,7 +1,7 @@
 .purchase-page {
     padding: 80px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
     column-gap: 20px;
     position: relative;
     z-index: 0;
@@ -16,6 +16,7 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
     background-color: rgb(255,244,234);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
     padding-top: 0px;
@@ -26,6 +27,7 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
     background-color: rgb(255,244,234);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
     padding-top: 5px;
@@ -53,14 +55,16 @@
 .purchase-form .column2 {
     display: flex;
     flex-direction: column;
-    grid-column: 2/ 3;
+    grid-column: 2 / 3;
 }
 
 .order-summary {
     padding: 20px;
     background-color: rgb(255,244,234);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding-top: 0px;
+    grid-column: 2 / 3;
 }
 
 .order-summary h4, h3 {
@@ -68,28 +72,31 @@
 }
 
 .order-summary button {
-    display: none;
+    visibility: hidden;
 }
 
 .payment-info {
     background-color: rgb(255,244,234);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
     padding-top: 5px;
-    margin-top: 20px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 .payment-button-container {
-    margin-top: 20px;
-    padding: 20px;
     background-color: rgb(255,244,234);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.payment-button-container button {
+.payment-button-container button, .payment-back-button {
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: .25rem;
@@ -109,20 +116,38 @@
     touch-action: manipulation;
 }
 
-.payment-button-container button:hover, .payment-button-container button:focus {
+.payment-button-container button:hover, .payment-back-button:hover, .payment-button-container button:focus, .payment-back-button:focus {
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     color: rgba(0, 0, 0, 0.65);
 }
 
-.payment-button-container button:hover {
+.payment-button-container button:hover, .payment-back-button:hover {
     transform: translateY(-1px);
 }
 
-.payment-button-container button:active {
+.payment-button-container button:active, .payment-back-button:active {
     background-color: #F0F0F1;
     border-color: rgba(0, 0, 0, 0.15);
     box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
     color: rgba(0, 0, 0, 0.65);
     transform: translateY(0);
+}
+
+.stripe-container-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+}
+
+.stripe-container-container button {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+
+.shipping-info h4 {
+    font-size: 10px;
 }

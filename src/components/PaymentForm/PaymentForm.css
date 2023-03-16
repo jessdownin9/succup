@@ -22,8 +22,6 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     margin-top: 10px;
-    margin-left: auto;
-    margin-right: 0px;
 }
 
 .payment-button:hover, .payment-button:focus {
@@ -42,4 +40,8 @@
     box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
     color: rgba(0, 0, 0, 0.65);
     transform: translateY(0);
+}
+
+.payment-success-message {
+    text-align: center;
 }
