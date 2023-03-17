@@ -9,13 +9,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 const port = process.env.PORT || 5000;
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, "..", "..", "build")));
-    app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
-    });
-}
-
 const contactRouter = require('./contactRouter');
 app.use("/contact", contactRouter);
 
@@ -27,5 +20,12 @@ app.use("/payment", paymentRouter);
 
 const customerRouter = require('./customerRouter');
 app.use("/customer", customerRouter);
+
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "..", "..", "build")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "..", "..", "build", "index.html"));
+    });
+}
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
