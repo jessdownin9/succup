@@ -15,6 +15,10 @@ export const Purchase = () => {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [zipCode, setZipCode] = useState('');
+    const [billingAddress, setBillingAddress] = useState('');
+    const [billingCity, setBillingCity] = useState('');
+    const [billingState, setBillingState] = useState('');
+    const [billingZipCode, setBillingZipCode] = useState('');
     const [sameAddress, setSameAddress] = useState(true);
     const [infoSubmitted, setInfoSubmitted] = useState(false);
     const { cartItems } = useShoppingCart();
@@ -22,28 +26,6 @@ export const Purchase = () => {
     const storeItems = useSelector(selectItems);
     const dispatch = useDispatch();
     const shippingCost = 1.26;
-
-    // const handleSubmit = async (e)  => {
-    //     e.preventDefault();
-    //     try {
-    //         const response = await fetch('/payment', {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json;charset=utf-8"
-    //             },
-    //             body: JSON.stringify({
-    //                 amount,
-    //                 id
-    //             })
-    //         });
-    //         if (response.status === 200) {
-    //             console.log('Successful payment');
-    //             setSuccess(true);
-    //         }
-    //      } catch (error) {
-    //         console.log('Error: ', error);
-    //      }
-    // };
     
     useEffect(() => {
         dispatch(fetchItems());
@@ -51,7 +33,7 @@ export const Purchase = () => {
 
     return (
        <div className='purchase-page'>
-            <form className={infoSubmitted ? 'hide': 'purchase-form'} action='/customer' method='POST' >
+            <form onSubmit={() => setInfoSubmitted(true)} className={infoSubmitted ? 'hide': 'purchase-form'} action='/customer' method='POST' >
                 <div className='shipping-info'>
                     <h2>Shipping Address</h2>
                     <div className='column1'>   
@@ -126,23 +108,53 @@ export const Purchase = () => {
                     <div className='billing-info-header'>
                         <h2>Billing Address</h2>
                         <label htmlFor='sameAddress'>Billing address same as shipping</label>
-                        <input type="checkbox" id="sameAddress" name="sameAddress" onChange={() => setSameAddress(!sameAddress)} defaultChecked />
+                        <input 
+                            type="checkbox" 
+                            id="sameAddress" 
+                            name="sameAddress" 
+                            onChange={() => setSameAddress(!sameAddress)} 
+                            defaultChecked
+                        />
                     </div>
                     <div className={sameAddress ? 'hide' : 'column1'}>
                         <label htmlFor="address">Address</label>
-                        <input type="text" id="address" name="address" />
+                        <input 
+                            type="text" 
+                            id="address" 
+                            name="address" 
+                            value={billingAddress}
+                            onChange={(e) => setBillingAddress(e.target.value)}
+                        />
                         <label htmlFor="city">City</label>
-                        <input type="text" id="city" name="city" />
+                        <input 
+                            type="text" 
+                            id="city" 
+                            name="city" 
+                            value={billingCity}
+                            onChange={(e) => setBillingCity(e.target.value)}
+                        />
                     </div>
                     <div className={sameAddress ? 'hide' : 'column2'}>
                         <label htmlFor="state">State</label>
-                        <input type="text" id="state" name="state" />
+                        <input 
+                            type="text" 
+                            id="state" 
+                            name="state" 
+                            value={billingState}
+                            onChange={(e) => setBillingState(e.target.value)}
+                        />
                         <label htmlFor="zipcode">Zip Code</label>
-                        <input type="text" id="zipcode" name="zipcode" />
+                        <input 
+                            type="text" 
+                            id="zipcode" 
+                            name="zipcode" 
+                            value={billingZipCode}
+                            onChange={(e) => setBillingZipCode(e.target.value)}
+                        />
                     </div>
                 </div>
                 <div className={infoSubmitted ? 'hide' : 'payment-button-container'}>
-                    <button type='submit'>Continue To Payment</button>
+                    <button type='submit' >Continue To Payment</button>
                 </div>
             </form>
             <div className='order-summary'>
