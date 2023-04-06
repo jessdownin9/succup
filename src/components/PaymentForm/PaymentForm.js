@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import './PaymentForm.css';
+import { useShoppingCart } from '../../context/ShoppingCartContext';
 
-export const PaymentForm = ({ amount }) => {
+export const PaymentForm = ({ amount, shippingAddress, email }) => {
     const [success, setSuccess] = useState(false);
     const stripe = useStripe();
     const elements = useElements();
+    const { cartItems } = useShoppingCart();
 
     const CARD_OPTIONS = {
         iconStyle: 'solid',
@@ -25,7 +27,37 @@ export const PaymentForm = ({ amount }) => {
                 color: 'red'
             }
         }
-    }
+    };
+
+    const submitOrderInfo = async () => {
+        const response = await fetch('/order', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json;charset=utf-8"
+            },
+            body: JSON.stringify({
+                amount,
+                shippingAddress,
+                email,
+                cartItems
+            })
+        });
+        if (response.status === 200) console.log('Order information recorded');
+    };
+
+    // const submitOrderDetails = async () => {
+    //     const response = await fetch('/orderDetails', {
+    //         method: 'POST',
+    //         headers: {
+    //             "Content-Type": "application/json;charset=utf-8"
+    //         },
+    //         body: JSON.stringify({
+    //             cartItems,
+    //             email
+    //         })
+    //     });
+    //     if (response.status === 200) console.log('Order details recorded');
+    // };
 
     const handleSubmit = async (e)  => {
         e.preventDefault();
@@ -49,6 +81,8 @@ export const PaymentForm = ({ amount }) => {
                if (response.status === 200) {
                    console.log('Successful payment');
                    setSuccess(true);
+                   submitOrderInfo();
+                //    submitOrderDetails();
                }
             } catch (error) {
                console.log('Error: ', error);

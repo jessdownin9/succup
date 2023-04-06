@@ -26,6 +26,7 @@ export const Purchase = () => {
     const storeItems = useSelector(selectItems);
     const dispatch = useDispatch();
     const shippingCost = 1.26;
+    let shippingAddress = `${address}, ${city}, ${state} ${zipCode}`;
     
     useEffect(() => {
         dispatch(fetchItems());
@@ -177,6 +178,8 @@ export const Purchase = () => {
                             const item = storeItems.find(storeItem => cartItem.id === storeItem.id);
                             return total + (item?.price || 0) * cartItem.quantity;
                         }, 0)) * 100)} 
+                        shippingAddress={shippingAddress}
+                        email={email}
                     />
                     <button className='payment-back-button' onClick={() => setInfoSubmitted(false)}>Back</button>
                 </div>

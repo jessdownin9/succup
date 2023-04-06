@@ -6,9 +6,11 @@ import './Home4.css';
 import "@fontsource/pavanam";
 import { buttonFontAnimation } from '../../animations/buttonFontAnimation';
 import { useSwipeable } from 'react-swipeable';
-// import { scrollBack, scrollToNext } from '../animations/scrollingAnimation';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Home = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
     const buttonRef = useRef(null);
     const [position, setPosition] = useState(3);
     const handlers = useSwipeable({
@@ -23,14 +25,6 @@ export const Home = () => {
     })
     
     useEffect(() => {
-        // document.addEventListener('wheel', (e) => {
-        //     if (e.deltaY > 0) {
-        //         scrollToNext();
-        //     } else if (e.deltaY < 0) {
-        //         scrollBack();
-        //     }
-        // })
-
         buttonFontAnimation(buttonRef.current, ['Londrina Solid', 'Londrina Shadow']);
     }, []);
 
@@ -42,13 +36,12 @@ export const Home = () => {
             </section>
 
             <section className='screen2'>
-                <div className = 'hidden'></div>
+                {/* <div className = 'hidden'></div> */}
                 <div className='paragraph-container'>
-                    <p>The Suc Cup is your modern all-in-one phone accessory. Utilizing durable yet flexible silicone, the Suc Cup allows you to mount your phone to any non-porous surface for your watching, filming, picture taking, or any other phone use desire. The Suc Cup can be stuck to your phone and then to the other surface you wish to mount it to with a simple push. And with tabs on each cup, you can remove the Suc Cup with ease. The included key ring allows you to store the Suc Cup on your key chain as a functional and stylish key chain ornament.</p>
-                    <button className='interested-button' onClick={() => window.open('https://byu.az1.qualtrics.com/jfe/form/SV_cvE3ECvmqd1PFxY','_blank')} ref={buttonRef} >I'M INTERESTED!</button>
+                    <p>The Suc Cup is a versatile phone accessory that lets you easily mount your phone to any non-porous surface.</p>
+                    <button className='shop-now-button' onClick={() => navigate('/shop')} ref={buttonRef} >SHOP NOW!</button>
                 </div>
                 <div className='headline-container'>
-                    <img className='purple-cup' alt='Purple Suc Cup' src={require('../../images/purplecup.png')} />
                     <h1>THE ONLY PHONE ACCESSORY YOU NEED</h1>
                 </div>
             </section>

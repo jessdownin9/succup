@@ -6,7 +6,7 @@ productsRouter.get('/', (req, res) => {
     db.query('SELECT * FROM products', (err, result) => {
         if (err) throw err;
         res.send(result.rows);
-    })
+    });
 });
 
 module.exports = productsRouter;

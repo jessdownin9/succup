@@ -6,10 +6,10 @@ import { PaymentForm } from './PaymentForm';
 const PUBLIC_KEY = "pk_test_51MjpCFBLEr2wfPgCajWAFPBqlq4OGKxIvjIj1nRd4itsugAAfNMTtl8Q9dxiurhVKbpZNTvQoxFOS8odf52Lppn900G0dRQCtc";
 const stripeTestPromise = loadStripe(PUBLIC_KEY);
 
-export const StripeContainer = ({ amount }) => {
+export const StripeContainer = ({ amount, shippingAddress, email }) => {
     return (
        <Elements stripe={stripeTestPromise}>
-            <PaymentForm amount={amount} />
+            <PaymentForm amount={amount} shippingAddress={shippingAddress} email={email} />
        </Elements>
     )
 };
