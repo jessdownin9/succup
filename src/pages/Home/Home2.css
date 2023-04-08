@@ -32,7 +32,7 @@
     font-size: 1.25vw;
     font-family: 'Pavanam';
     color: #372A28;
-    text-align: flex-end;
+    text-align: right;
 }
 
 .shop-now-button {
@@ -96,7 +96,7 @@
 }
 
 /* Tablets */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (orientation: portrait) {
     .screen2 {
         display: flex;
         flex-direction: column-reverse;
@@ -125,7 +125,7 @@
 }
 
 /* Mobile Devices */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) and (orientation: portrait) {
     .paragraph-container p {
         font-size: 0.85em;
     }
