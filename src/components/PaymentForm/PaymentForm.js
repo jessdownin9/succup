@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import './PaymentForm.css';
 import { useShoppingCart } from '../../context/ShoppingCartContext';
+import { useNavigate } from 'react-router-dom';
 
 export const PaymentForm = ({ amount, shippingAddress, email }) => {
+    const navigate = useNavigate();
     const [success, setSuccess] = useState(false);
     const stripe = useStripe();
     const elements = useElements();
@@ -45,20 +47,6 @@ export const PaymentForm = ({ amount, shippingAddress, email }) => {
         if (response.status === 200) console.log('Order information recorded');
     };
 
-    // const submitOrderDetails = async () => {
-    //     const response = await fetch('/orderDetails', {
-    //         method: 'POST',
-    //         headers: {
-    //             "Content-Type": "application/json;charset=utf-8"
-    //         },
-    //         body: JSON.stringify({
-    //             cartItems,
-    //             email
-    //         })
-    //     });
-    //     if (response.status === 200) console.log('Order details recorded');
-    // };
-
     const handleSubmit = async (e)  => {
         e.preventDefault();
         const {error, paymentMethod} = await stripe.createPaymentMethod({
@@ -82,7 +70,9 @@ export const PaymentForm = ({ amount, shippingAddress, email }) => {
                    console.log('Successful payment');
                    setSuccess(true);
                    submitOrderInfo();
-                //    submitOrderDetails();
+                   setTimeout(() => {
+                        navigate('/home');
+                   }, 4000);
                }
             } catch (error) {
                console.log('Error: ', error);
@@ -105,6 +95,7 @@ export const PaymentForm = ({ amount, shippingAddress, email }) => {
             </form> :
             <div>
                 <h3 className='payment-success-message'>Your payment was successful!</h3>
+                <h3 className='payment-success-message'>You will be redirected to the home page in a moment.</h3>
             </div>
             }
         </div>

@@ -24,9 +24,6 @@ app.use("/customer", customerRouter);
 const orderRouter = require('./orderRouter');
 app.use("/order", orderRouter);
 
-const orderDetailsRouter = require('./orderDetailsRouter');
-app.use("/orderDetails", orderDetailsRouter);
-
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "..", "..", "build")));
     app.get("*", (req, res) => {
