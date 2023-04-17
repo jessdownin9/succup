@@ -34,7 +34,13 @@ export const Purchase = () => {
 
     return (
        <div className='purchase-page'>
-            <form onSubmit={() => setInfoSubmitted(true)} className={infoSubmitted ? 'hide': 'purchase-form'} action='/customer' method='POST' >
+            <form onSubmit={(e) => {
+                    e.preventDefault();
+                    setInfoSubmitted(true)
+                }}                
+                className={infoSubmitted ? 'hide': 'purchase-form'} 
+                action='/customer' 
+                method='POST' >
                 <div className='shipping-info'>
                     <h2>Shipping Address</h2>
                     <div className='column1'>   
