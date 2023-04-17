@@ -90,6 +90,7 @@ export const PaymentForm = ({ amount, shippingAddress, email }) => {
                    localStorage.clear();
                    setTimeout(() => {
                         navigate('/home');
+                        window.location.reload();
                    }, 4000);
                }
             } catch (error) {
