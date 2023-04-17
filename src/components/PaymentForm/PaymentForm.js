@@ -70,6 +70,7 @@ export const PaymentForm = ({ amount, shippingAddress, email }) => {
                    console.log('Successful payment');
                    setSuccess(true);
                    submitOrderInfo();
+                   localStorage.clear();
                    setTimeout(() => {
                         navigate('/home');
                    }, 4000);
