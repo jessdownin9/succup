@@ -47,6 +47,22 @@ export const PaymentForm = ({ amount, shippingAddress, email }) => {
         if (response.status === 200) console.log('Order information recorded');
     };
 
+    const sendEmailReceipt = async () => {
+        const response = await fetch('/emailReceipt', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8"
+            },
+            body: JSON.stringify({
+                amount,
+                shippingAddress,
+                email,
+                cartItems
+            })
+        });
+        if (response.status === 200) console.log('Email receipt sent');
+    }
+
     const handleSubmit = async (e)  => {
         e.preventDefault();
         const {error, paymentMethod} = await stripe.createPaymentMethod({
@@ -70,6 +86,7 @@ export const PaymentForm = ({ amount, shippingAddress, email }) => {
                    console.log('Successful payment');
                    setSuccess(true);
                    submitOrderInfo();
+                   sendEmailReceipt();
                    localStorage.clear();
                    setTimeout(() => {
                         navigate('/home');

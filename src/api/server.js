@@ -24,6 +24,9 @@ app.use("/customer", customerRouter);
 const orderRouter = require('./orderRouter');
 app.use("/order", orderRouter);
 
+const emailReceiptRouter = require('./emailReceiptRouter');
+app.use("/emailReceipt", emailReceiptRouter);
+
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "..", "..", "build")));
     app.get("*", (req, res) => {
